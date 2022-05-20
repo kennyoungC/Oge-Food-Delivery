@@ -5,7 +5,9 @@ import { useDispatch, useSelector } from "react-redux"
 import { uiActions } from "../../store/ui-slice"
 
 const HeaderCartButton = (props) => {
-  const totalCartItems = useSelector((state) => state.cart.totalQuantity)
+  // const totalCartItems = useSelector((state) => state.cart.totalQuantity)
+  const items = useSelector((state) => state.cart.items)
+  const totalItems = items.reduce((acc, cur) => acc + cur.quantity, 0)
   const dispatch = useDispatch()
 
   const toggleModalHandler = () => {
@@ -31,7 +33,7 @@ const HeaderCartButton = (props) => {
         </svg>
       </span>
       <span className="fw-bolder text-light">Your Cart</span>{" "}
-      <Badge bg="danger">{totalCartItems}</Badge>
+      <Badge bg="danger">{totalItems}</Badge>
       <span className="visually-hidden">unread messages</span>
     </Button>
   )

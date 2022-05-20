@@ -8,7 +8,7 @@ const CartItem = (props) => {
 
   const increaceCartItems = () => {
     dispatch(
-      cartActions.addToCart({
+      cartActions.increaseCartItem({
         name,
         price,
 
