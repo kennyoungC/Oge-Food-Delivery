@@ -2,8 +2,12 @@ import React from "react"
 import HeaderCartButton from "./HeaderCartButton"
 import mealImg from "../../assets/meals.jpg"
 import styles from "./Header.module.css"
+import Cart from "../Cart/Cart"
+import { useSelector } from "react-redux"
 
 const Header = () => {
+  const isShowing = useSelector((state) => state.ui.isModalShowing)
+
   return (
     <>
       <header
@@ -12,6 +16,7 @@ const Header = () => {
         <h1>Oge's Food Delivery</h1>
 
         <HeaderCartButton />
+        {isShowing && <Cart />}
       </header>
 
       <div className={styles["main-image"]}>

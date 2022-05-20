@@ -1,10 +1,20 @@
 import React from "react"
 
 import { Badge, Button } from "react-bootstrap"
+import { useDispatch, useSelector } from "react-redux"
+import { uiActions } from "../../store/ui-slice"
 
 const HeaderCartButton = (props) => {
+  const totalCartItems = useSelector((state) => state.cart.totalQuantity)
+  const dispatch = useDispatch()
+
+  const toggleModalHandler = () => {
+    dispatch(uiActions.showModal())
+  }
+
   return (
     <Button
+      onClick={toggleModalHandler}
       variant="transparent"
       className="px-4 border border-warning rounded-pill d-flex gap-2 align-items-center"
     >
@@ -21,7 +31,7 @@ const HeaderCartButton = (props) => {
         </svg>
       </span>
       <span className="fw-bolder text-light">Your Cart</span>{" "}
-      <Badge bg="danger">9</Badge>
+      <Badge bg="danger">{totalCartItems}</Badge>
       <span className="visually-hidden">unread messages</span>
     </Button>
   )

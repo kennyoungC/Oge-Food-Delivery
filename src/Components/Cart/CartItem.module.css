@@ -16,7 +16,7 @@
   width: 10rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .price {
@@ -27,7 +27,7 @@
 .amount {
   font-weight: bold;
   border: 1px solid #ccc;
-  padding: 0.25rem 0.75rem;
+  padding: 0.15rem 0.75rem;
   border-radius: 6px;
   color: #363636;
 }
