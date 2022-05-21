@@ -91,7 +91,7 @@ const Cart = () => {
       <p className="text-success">Your order has Successfully been placed!!!</p>
       <div className={styles.actions}>
         <button
-          className={`${styles["button--alt"]} border border-success text-success`}
+          className="border border-success text-white bg-success"
           onClick={closeModalHandler}
         >
           Close
