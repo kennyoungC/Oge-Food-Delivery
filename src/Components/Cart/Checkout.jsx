@@ -1,8 +1,5 @@
-import { useEffect, useRef } from "react"
-import { useState } from "react"
 import styles from "./Checkout.module.css"
 import useInput from "../../hooks/use-input"
-import { useDispatch } from "react-redux"
 
 const Checkout = (props) => {
   const {

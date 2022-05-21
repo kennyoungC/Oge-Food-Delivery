@@ -13,7 +13,7 @@ const Header = () => {
       <header
         className={`${styles.header} d-flex flex-column flex-sm-row justify-content-between align-items-center `}
       >
-        <h1>Oge's Food Delivery</h1>
+        <h1>Precious's Delivery</h1>
 
         <HeaderCartButton />
         {isShowing && <Cart />}
