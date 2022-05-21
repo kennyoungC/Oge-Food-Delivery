@@ -1,11 +1,12 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 import { Badge, Button } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { uiActions } from "../../store/ui-slice"
+import styles from "./HeaderCartButton.module.css"
 
 const HeaderCartButton = (props) => {
-  // const totalCartItems = useSelector((state) => state.cart.totalQuantity)
+  const [btnIsHighligted, setBtnIsHighligted] = useState(false)
   const items = useSelector((state) => state.cart.items)
   const totalItems = items.reduce((acc, cur) => acc + cur.quantity, 0)
   const dispatch = useDispatch()
@@ -14,11 +15,28 @@ const HeaderCartButton = (props) => {
     dispatch(uiActions.showModal())
   }
 
+  const btnBumpStyling = btnIsHighligted ? styles.bump : ""
+
+  useEffect(() => {
+    if (items.length === 0) {
+      return
+    }
+    setBtnIsHighligted(true)
+
+    const timer = setTimeout(() => {
+      setBtnIsHighligted(false)
+    }, 300)
+
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [items])
+
   return (
     <Button
       onClick={toggleModalHandler}
       variant="transparent"
-      className="px-4 border border-warning rounded-pill d-flex gap-2 align-items-center"
+      className={`${btnBumpStyling} px-4 border border-warning rounded-pill d-flex gap-2 align-items-center`}
     >
       <span>
         <svg

@@ -45,6 +45,9 @@ const cartSlice = createSlice({
         existingItem.totalPrice = existingItem.totalPrice - existingItem.price
       }
     },
+    resetCart(state) {
+      state.items = []
+    },
   },
 })
 export const cartActions = cartSlice.actions
