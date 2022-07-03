@@ -77,7 +77,8 @@ const Cart = () => {
       <div className={styles.actions}>
         <div className={styles.total}>
           <span>Total Amount</span>
-          <span>${totalAmount.toFixed(2)}</span>
+          <span>${totalAmount}</span>
+          {/* <span>${totalAmount.toFixed(2)}</span> */}
         </div>
         {!showForm && actionBtn}
       </div>

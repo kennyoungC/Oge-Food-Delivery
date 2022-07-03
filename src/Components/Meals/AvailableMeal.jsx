@@ -6,9 +6,32 @@ import styles from "./MealItem/AvailableMeal.module.css"
 
 import MealItem from "./MealItem/MealItem"
 
+const mealList = [
+  {
+    price: 100,
+    description: "A nice meal",
+    id: "1",
+    name: "Meal 1",
+    quantity: 1,
+  },
+  {
+    price: 150,
+    description: "A second nice meal",
+    id: "2",
+    name: "Meal 2",
+    quantity: 1,
+  },
+  {
+    price: 120,
+    description: "A third nice meal",
+    id: "3",
+    name: "Meal 3",
+    quantity: 1,
+  },
+]
 const AvailableMeal = () => {
   // const [mealList, setMealList] = useState([])
-  const mealList = useSelector((state) => state.ui.meals)
+  // const mealList = useSelector((state) => state.ui.meals)
   const dispatch = useDispatch()
   useEffect(() => {
     const getMeals = async () => {

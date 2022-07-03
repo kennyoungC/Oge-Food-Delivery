@@ -24,7 +24,8 @@ const CartItem = (props) => {
       <div>
         <h2 className="text-capitalize">{name}</h2>
         <div className={styles.summary}>
-          <span className={styles.price}>${price.toFixed(2)}</span>
+          <span className={styles.price}>${price}</span>
+          {/* <span className={styles.price}>${price.toFixed(2)}</span> */}
           <span className={styles.amount}>x {amount}</span>
         </div>
       </div>
@@ -33,7 +34,8 @@ const CartItem = (props) => {
           <button onClick={removeCartItems}>−</button>
           <button onClick={increaceCartItems}>+</button>
         </div>
-        <span className={styles.price}>${totalPrice.toFixed(2)} </span>
+        <span className={styles.price}>${totalPrice} </span>
+        {/* <span className={styles.price}>${totalPrice.toFixed(2)} </span> */}
       </div>
     </li>
   )
